@@ -16,7 +16,7 @@ function SearchForm({ artistSearch, onChange, onSubmit }) {
 SearchForm.propTypes = {
   artistSearch: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.inRequired
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default SearchForm;
