@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 
-import ArtistsView from '../artists/ArtistsView';
+import ArtistListPresenter from '../../containers/ArtistListPresenter';
 
 //Add release view
 //Add song view
@@ -14,9 +14,9 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/' component={ArtistsView}/>
+        <Route path='/' component={ArtistListPresenter}/>
       </Switch>
     </Router>
   );
 }
-  
+
