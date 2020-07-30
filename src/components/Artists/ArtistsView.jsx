@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ArtistView from './ArtistView.jsx';
 
 import { Link } from 'react-router-dom';
 
@@ -8,7 +7,7 @@ const ArtistsView = ({ artists }) => {
   const artistElements = artists.map(artist => (
     <Link to={`/release/${artist.id}`} key={artist.id}>
       <li >
-        <ArtistView name= {artist.name} />
+        <h4>{artist.name}</h4>
       </li>
     </Link>
   ));
