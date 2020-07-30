@@ -7,6 +7,7 @@ import {
 
 import ArtistListPresenter from '../../containers/ArtistListPresenter';
 import ReleaseListPresenter from '../../containers/ReleaseListPresenter';
+import RecordingListPresenter from '../../containers/RecordingListPresenter';
 
 //Add release view
 //Add song view
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
+        <Route path='/releases/recordings/:id' component={RecordingListPresenter}/>
         <Route path='/releases/:id' component={ReleaseListPresenter}/>
         <Route path='/' component={ArtistListPresenter}/>
       </Switch>

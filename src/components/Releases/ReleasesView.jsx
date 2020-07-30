@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ReleasesView = ({ releases }) => {
   const releaseElements = releases.map(release => (
-    <Link to={`/recordings/${release.id}`} key={release.id}>
+    <Link to={`/releases/recordings/${release.id}`} key={release.id}>
       <li>
         <h4>{release.title}</h4>
         <h6>{release.date}</h6>

@@ -6,7 +6,7 @@ import { usePagination } from '../hooks/usePagination';
 
 
 const ArtistListPresenter = () => {
-  const [limit, setLimit] = useState(20);
+  const [limit] = useState(20);
   const { offset, setOffset, setTotalCount, Pagination } = usePagination(limit);
   const { artists, handleSubmit, handleChange } = useArtists(offset, setOffset, setTotalCount, limit);
   
