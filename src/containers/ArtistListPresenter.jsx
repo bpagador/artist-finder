@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArtistsView from '../components/Artists/ArtistsView';
 import SearchForm from '../components/SearchForm/SearchForm';
 import { useArtists } from '../hooks/useArtists';
@@ -6,8 +6,9 @@ import { usePagination } from '../hooks/usePagination';
 
 
 const ArtistListPresenter = () => {
-  const { page, setTotalPages, Pagination } = usePagination();
-  const { artists, handleSubmit, handleChange } = useArtists(page, setTotalPages);
+  const [limit, setLimit] = useState(20);
+  const { offset, setOffset, setTotalCount, Pagination } = usePagination(limit);
+  const { artists, handleSubmit, handleChange } = useArtists(offset, setOffset, setTotalCount, limit);
   
 
   return (

@@ -3,7 +3,7 @@ import * as Artist from '../models/Artist';
 
 //ArtistModel
 
-export const useArtists = (page, setTotalPages) => {
+export const useArtists = (offset, setOffset, setTotalCount, limit) => {
   const [artists, setArtists] = useState([]);
   const [artistSearch, setArtistSearch] = useState('');
 
@@ -13,22 +13,23 @@ export const useArtists = (page, setTotalPages) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    Artist.find(artistSearch, page)
-      .then(({ artists, totalPages }) => {
+    Artist.find(artistSearch, offset, limit)
+      .then(({ artists, totalCount }) => {
         setArtists(artists);
-        setTotalPages(totalPages);
+        setTotalCount(totalCount);
+        setOffset(0);
       });
   };
 
   useEffect(() => {
     if(artistSearch) {
-      Artist.find(artistSearch, page)
-        .then(({ artists, totalPages }) => {
+      Artist.find(artistSearch, offset, limit)
+        .then(({ artists, totalCount }) => {
           setArtists(artists);
-          setTotalPages(totalPages);
+          setTotalCount(totalCount);
         });
     }
-  }, [page]);
+  }, [offset]);
 
   return {
     handleChange,

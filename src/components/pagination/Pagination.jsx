@@ -1,22 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Pagination = ({ totalPages, nextPage, prevPage, page }) => {
+const Pagination = ({ totalCount, nextPage, prevPage, offset, limit }) => {
   return (
     <>
-      <button disabled={page === 1} onClick={prevPage}>&lt;</button>
-      <span>{page} / {totalPages}</span>
-      <button disabled={page === totalPages} onClick={nextPage}>&gt;</button>
+      {
+        totalCount > 0 && <>
+          <button disabled={offset === 0} onClick={prevPage}>&lt;</button>
+          {}
+          <span>{Math.ceil(offset / limit) + 1} / {Math.ceil(totalCount / limit)}</span>
+          <button disabled={offset >= totalCount - limit} onClick={nextPage}>&gt;</button>
+        </>
+      }
+
 
     </>
   );
 };
 
 Pagination.propTypes = {
-  totalPages: PropTypes.number.isRequired,
-  page: PropTypes.number.isRequired,
+  totalCount: PropTypes.number.isRequired,
+  offset: PropTypes.number.isRequired,
   nextPage: PropTypes.func.isRequired,
-  prevPage: PropTypes.func.isRequired
+  prevPage: PropTypes.func.isRequired,
+  limit: PropTypes.number.isRequired
 };
 
 export default Pagination;

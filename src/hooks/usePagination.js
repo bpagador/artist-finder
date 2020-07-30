@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import Pagination from '../components/pagination/Pagination.jsx';
 
-export const usePagination = () => {
-  const [page, setPage] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
+export const usePagination = (limit) => {
+  const [offset, setOffset] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
 
-  const previousPage = () => setPage(page => page - 1);
-  const nextPage = () => setPage(page => page + 1);
+  const previousPage = () => setOffset(offset => offset - limit);
+  const nextPage = () => setOffset(offset => offset + limit);
 
   return {
-    page,
+    offset,
+    setOffset,
     previousPage,
     nextPage,
-    setTotalPages,
+    setTotalCount,
     Pagination: (<Pagination
-      totalPages={totalPages}
-      page={page}
-      previousPage={previousPage}
+      totalCount={totalCount}
       nextPage={nextPage}
+      prevPage={previousPage}
+      offset={offset}  
+      limit={limit}
     />)
   };
 };
