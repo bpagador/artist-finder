@@ -8,13 +8,14 @@ export const useArtists = (page, setTotalPages) => {
   const [artistSearch, setArtistSearch] = useState('');
 
   const handleChange = ({ target }) => {
-    setArtistSearch({ target: target.value });
+    setArtistSearch(target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     Artist.find(artistSearch, page)
       .then(({ artists, totalPages }) => {
+        console.log(artists);
         setArtists(artists);
         setTotalPages(totalPages);
       });
@@ -27,11 +28,11 @@ export const useArtists = (page, setTotalPages) => {
           setArtists(artists);
           setTotalPages(totalPages);
         });
-    } 
+    }
   }, [page]);
 
-  return { 
-    handleChange, 
-    handleSubmit, 
+  return {
+    handleChange,
+    handleSubmit,
     artists };
 };

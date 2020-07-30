@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Pagination from '../components/pagination/Pagination.jsx';
 
 export const usePagination = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
 
   const previousPage = () => setPage(page => page - 1);

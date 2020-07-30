@@ -5,17 +5,17 @@ import ArtistView from './ArtistView.jsx';
 import { Link } from 'react-router-dom';
 
 const ArtistsView = ({ artists }) => {
-  const artistElements = artists.map(artist => {
-    <Link to={`/release/${artist.id}`}>
-      <li key={artist.id}>
+  const artistElements = artists.map(artist => (
+    <Link to={`/release/${artist.id}`} key={artist.id}>
+      <li >
         <ArtistView name= {artist.name} />
       </li>
-    </Link>;
-  });
+    </Link>
+  ));
 
   return (
     <ul>
-      {artistElements}   
+      {artistElements}
     </ul>
   );
 };

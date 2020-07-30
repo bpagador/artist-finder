@@ -11,7 +11,7 @@ const ArtistView = ({ name })=> {
 
 ArtistView.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  // id: PropTypes.string.isRequired
 };
 
 export default ArtistView;
