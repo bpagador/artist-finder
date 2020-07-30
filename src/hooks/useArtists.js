@@ -15,7 +15,6 @@ export const useArtists = (page, setTotalPages) => {
     e.preventDefault();
     Artist.find(artistSearch, page)
       .then(({ artists, totalPages }) => {
-        console.log(artists);
         setArtists(artists);
         setTotalPages(totalPages);
       });
