@@ -13,7 +13,7 @@ export const useArtists = (page, setTotalPages) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    Artist.find()
+    Artist.find(artistSearch, page)
       .then(({ artists, totalPages }) => {
         setArtists(artists);
         setTotalPages(totalPages);
@@ -21,7 +21,13 @@ export const useArtists = (page, setTotalPages) => {
   };
 
   useEffect(() => {
-    if(artistSearch) handleSubmit(event);
+    if(artistSearch) {
+      Artist.find(artistSearch, page)
+        .then(({ artists, totalPages }) => {
+          setArtists(artists);
+          setTotalPages(totalPages);
+        });
+    } 
   }, [page]);
 
   return { 

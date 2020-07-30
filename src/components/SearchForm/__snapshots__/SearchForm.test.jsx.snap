@@ -7,7 +7,7 @@ exports[`SearchForm component renders the SearchForm component 1`] = `
   <label>
     Search for Artist
     <input
-      name="artistName"
+      name="artistSearch"
       onChange={[MockFunction]}
       type="text"
       value="beyonce"

@@ -11,18 +11,18 @@ describe('SearchForm component', () => {
     handleChange = jest.fn();
     handleSubmit = jest.fn();
     wrapper = shallow(<SearchForm
-      artistName="beyonce"
+      artistSearch="beyonce"
       onChange={handleChange}
       onSubmit={handleSubmit}
     />);
   });
 
-  it('has an input with a value set to artistName', () => {
-    expect(wrapper.find('input[name="artistName"]').prop('value')).toEqual('beyonce');
+  it('has an input with a value set to artistSearch', () => {
+    expect(wrapper.find('input[name="artistSearch"]').prop('value')).toEqual('beyonce');
   });
 
-  it('invokes an onChange prop when the artistName input changes', () => {
-    wrapper.find('input[name="artistName"]').simulate('change');
+  it('invokes an onChange prop when the artistSearch input changes', () => {
+    wrapper.find('input[name="artistSearch"]').simulate('change');
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
 
