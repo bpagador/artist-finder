@@ -5,7 +5,9 @@ import { useReleases } from '../hooks/useReleases';
 import { usePagination } from '../hooks/usePagination';
 
 
-const ReleaseListPresenter = ({ match }) => {
+const ReleaseListPresenter = ({ match, location }) => {
+  const params = new URLSearchParams(location.search);
+  const artistName = params.get('artist');
   const [limit] = useState(20);
 
   const { offset, setOffset, setTotalCount, Pagination } = usePagination(limit);
@@ -13,13 +15,14 @@ const ReleaseListPresenter = ({ match }) => {
   return (
     <>
       {Pagination}
-      <ReleasesView onClick={handleClick} releases={releases}/>
+      <ReleasesView onClick={handleClick} releases={releases} artistName={artistName}/>
     </>
   );
 };
 
 ReleaseListPresenter.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default ReleaseListPresenter;

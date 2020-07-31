@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ArtistsView = ({ artists }) => {
   const artistElements = artists.map(artist => (
-    <Link to={`/releases/${artist.id}`} key={artist.id}>
+    <Link to={`/releases/${artist.id}?artist=${artist.name}`} key={artist.id}>
       <li >
         <h4>{artist.name}</h4>
       </li>
