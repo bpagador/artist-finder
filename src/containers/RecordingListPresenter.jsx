@@ -16,7 +16,6 @@ const RecordingListPresenter = ({ match, location }) => {
     <>
       {Pagination}
       <RecordingsView onClick={handleClick} recordings={recordings} artistName={artistName}/>
-      
     </>
   );
 };

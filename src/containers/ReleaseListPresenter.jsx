@@ -4,7 +4,6 @@ import ReleasesView from '../components/Releases/ReleasesView';
 import { useReleases } from '../hooks/useReleases';
 import { usePagination } from '../hooks/usePagination';
 
-
 const ReleaseListPresenter = ({ match, location }) => {
   const params = new URLSearchParams(location.search);
   const artistName = params.get('artist');

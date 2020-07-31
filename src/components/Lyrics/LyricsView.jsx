@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const LyricsView = ({ lyrics }) => (
-
   <p>{lyrics}</p>
-
 );
 
 LyricsView.propTypes = {
@@ -13,4 +10,3 @@ LyricsView.propTypes = {
 };
 
 export default LyricsView;
-

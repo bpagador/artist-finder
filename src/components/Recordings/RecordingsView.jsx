@@ -7,8 +7,7 @@ const RecordingsView = ({ recordings, artistName }) => {
     <Link to={`/lyrics/?artist=${artistName}&title=${recording.title}`} key={recording.id}>
       <li>
         <h4>{recording.title}</h4>
-        { (recording.type.length > 0) && <h6>{recording.type}</h6>
-        }
+        { (recording.type.length > 0) && <h6>{recording.type}</h6> }
       </li>
     </Link>
   ));
@@ -20,7 +19,6 @@ const RecordingsView = ({ recordings, artistName }) => {
         {recordingElements}
       </ul>
     </>
-    
   );
 };
 

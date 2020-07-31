@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as Artist from '../models/Artist';
 
-//ArtistModel
-
 export const useArtists = (offset, setOffset, setTotalCount, limit) => {
   const [artists, setArtists] = useState([]);
   const [artistSearch, setArtistSearch] = useState('');

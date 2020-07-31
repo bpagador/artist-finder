@@ -8,7 +8,6 @@ export const useLyrics = (artist, title) => {
     Lyrics.find(artist, title)
       .then(({ lyrics }) => {
         setLyrics(lyrics);
-
       });
   };
 
@@ -17,7 +16,6 @@ export const useLyrics = (artist, title) => {
       Lyrics.find(artist, title)
         .then(({ lyrics }) => {
           setLyrics(lyrics);
-
         });
     }
   }, []);

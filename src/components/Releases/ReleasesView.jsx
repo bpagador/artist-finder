@@ -8,23 +8,19 @@ const ReleasesView = ({ releases, artistName }) => {
       <li>
         <img src={`http://coverartarchive.org/release/${release.id}/front`} onError={(e)=>{e.target.onerror = null; e.target.src = '/public/music_icon.svg';}} width='250px' />
 
-        
         <h4>{release.title}</h4>
         <h6>{release.date}</h6>
-
       </li>
     </Link>
   ));
 
   return (
-    
     <>
       <h3>{artistName}</h3>
       <ul>
         {releaseElements}
       </ul>
     </>
-    
   );
 };
 

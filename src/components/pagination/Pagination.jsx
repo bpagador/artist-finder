@@ -12,8 +12,6 @@ const Pagination = ({ totalCount, nextPage, prevPage, offset, limit }) => {
           <button disabled={offset >= totalCount - limit} onClick={nextPage}>&gt;</button>
         </>
       }
-
-
     </>
   );
 };

@@ -10,4 +10,3 @@ export const find = (artistId, offset, limit) => {
       }))
     }));
 };
-

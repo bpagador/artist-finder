@@ -10,9 +10,6 @@ import ReleaseListPresenter from '../../containers/ReleaseListPresenter';
 import RecordingListPresenter from '../../containers/RecordingListPresenter';
 import LyricsPresenter from '../../containers/LyricsPresenter';
 
-//Add release view
-//Add song view
-
 export default function App() {
   return (
     <Router>
@@ -25,4 +22,3 @@ export default function App() {
     </Router>
   );
 }
-
